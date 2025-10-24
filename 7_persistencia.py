@@ -63,6 +63,6 @@ memory = ConversationBufferMemory(return_messages=True)
 cargar_memoria()
 
 # --- Prueba ---
-print(ejecutar_con_memoria("Hola, soy Alejandro."))
+print(ejecutar_con_memoria("Hola, soy Joseph."))
 print(ejecutar_con_memoria("¿Recuerdas cómo me llamo?"))
 print(ejecutar_con_memoria("¿Qué hablamos antes?"))
