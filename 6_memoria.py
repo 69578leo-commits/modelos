@@ -46,7 +46,7 @@ prompt = ChatPromptTemplate.from_messages([
 memory = ConversationBufferMemory(return_messages=True)
 
 # Ejemplo de uso
-print(ejecutar_con_memoria("Hola, soy Alejandro."))
+print(ejecutar_con_memoria("Hola, soy Joseph."))
 print(ejecutar_con_memoria("¿Recuerdas cómo me llamo?"))
 print(ejecutar_con_memoria("¿Qué me dijiste primero?"))
 print(ejecutar_con_memoria("¿Puedes resumir nuestra conversación?"))
