@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>0</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/************************************************************/
+/* ESTILOS GLOBALES (OPCIONAL)             */
+/************************************************************/
+QWidget {
+    /* Fondo principal: color gris oscuro sobrio */
+    background-color: #3C4148;
+    /* Texto principal: blanco sutil */
+    color: #F0F0F0;
+    /* Fuente formal */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+/************************************************************/
+/* QMenuBar                            */
+/************************************************************/
+QMenuBar {
+    /* Color de fondo: igual que el principal */
+    background-color: #3C4148; 
+    /* Borde inferior para separar la barra */
+    border-bottom: 1px solid #5A5F6B;
+    padding: 2px; 
+}
+
+QMenuBar::item {
+    color: #F0F0F0;
+    padding: 5px 10px; 
+    background: transparent;
+}
+
+QMenuBar::item:selected {
+    /* Resalte al pasar el ratón */
+    background-color: #5A5F6B;
+    border-radius: 3px;
+}
+
+/************************************************************/
+/* QMenu (QAction Contenedor)         */
+/************************************************************/
+QMenu {
+    /* Fondo del menú desplegable: debe contrastar ligeramente */
+    background-color: #3C4148;
+    /* Borde formal */
+    border: 1px solid #5A5F6B; 
+    /* Sombra para profundidad */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+QMenu::item {
+    /* Estilo de la acción (QAction) */
+    color: #F0F0F0;
+    /* Espaciado para mejorar la visibilidad */
+    padding: 4px 25px 4px 5px; 
+}
+
+QMenu::item:selected {
+    /* Estado al pasar el ratón: Azul corporativo */
+    background-color: #0078D7; 
+    color: white; 
+    border-radius: 2px;
+}
+
+QMenu::separator {
+    /* Separador sutil */
+    height: 1px;
+    margin: 5px 10px; /* Margen superior e inferior */
+    background-color: #5A5F6B;
+}
+
+/************************************************************/
+/* QStatusBar                         */
+/************************************************************/
+QStatusBar {
+    /* Fondo de la barra de estado: más oscuro para distinguirla */
+    background-color: #32363C;
+    /* Borde superior formal */
+    border-top: 1px solid #5A5F6B;
+    min-height: 25px;
+    padding: 1px 5px;
+}
+
+QStatusBar QLabel {
+    /* Estilo para los mensajes de estado */
+    color: #B0B0B0;
+    font-style: italic;
+    padding: 0 5px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuModelos">
+    <property name="title">
+     <string>Modelos</string>
+    </property>
+    <addaction name="actionBasicos"/>
+    <addaction name="actionLangChain"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menuModelos"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionBasicos">
+   <property name="text">
+    <string>Basicos</string>
+   </property>
+  </action>
+  <action name="actionLangChain">
+   <property name="text">
+    <string>LangChain</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

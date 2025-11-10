@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>544</width>
+    <height>465</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+/* === Estilo general moderno === */
+QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #232526, stop:1 #414345);
+    color: #FFFFFF;
+    font-family: "Inter", "Segoe UI Variable", "Roboto", "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Aplica color blanco a todos los textos */
+* {
+    color: #FFFFFF;
+}
+
+/* === Frames === */
+QFrame {
+    background-color: #282a36;
+    border-radius: 16px;
+    border: 1.5px solid #383a42;
+    box-shadow: 0 8px 24px 0 rgba(30,34,40,0.08);
+}
+
+/* Barra superior */
+#frame_superior {
+    background: rgba(34,36,42,0.9);
+    border: none;
+    border-bottom: 1.5px solid #3B3F4B;
+    padding: 10px;
+}
+
+/* Panel lateral */
+#frame_lateral {
+    background: rgba(38,41,49,0.96);
+    border-right: 1.5px solid #38404B;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Área principal */
+#frame_paginas {
+    background: transparent;
+}
+
+/* === Botones === */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #31344b, stop:1 #23253b);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    transition: 0.2s;
+    box-shadow: 0px 1.5px 4px 0 rgba(30,34,40,0.09);
+}
+
+QPushButton:hover {
+    background: #5e72e4;
+    color: #FFFFFF;
+    transform: translateY(-2px) scale(1.05);
+}
+
+QPushButton:pressed {
+    background: #362d7f;
+    color: #FFFFFF;
+}
+
+/* Botón principal (Menú) */
+#boton_menu {
+    background: #7F1DFF;
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    box-shadow: 0 4px 16px 0 rgba(127,29,255,0.18);
+}
+#boton_menu:hover {
+    background: #561bac;
+}
+#boton_menu:pressed {
+    background: #3f127a;
+}
+
+/* Botón salir */
+#boton_salir {
+    background: #ff3366;
+    color: #FFFFFF;
+    border: none;
+    font-weight: 600;
+    transition: 0.1s;
+}
+#boton_salir:hover {
+    background: #b81342;
+}
+#boton_salir:pressed {
+    background: #79102b;
+}
+
+/* === Campos de texto === */
+QLineEdit, QTextEdit {
+    background: #24252A;
+    color: #FFFFFF;
+    border: 1.2px solid #6D70F3;
+    border-radius: 7px;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 400;
+    transition: border 0.2s;
+}
+QLineEdit:focus, QTextEdit:focus {
+    border: 1.5px solid #7F1DFF;
+    background: #353859;
+    color: #FFFFFF;
+}
+
+/* === Labels === */
+QLabel {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+/* Label inferior o secundario */
+#label {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* === Stacked Widget === */
+QStackedWidget {
+    background: transparent;
+    border: 1.2px solid #292b38;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+/* === Scrollbars === */
+QScrollBar:vertical {
+    border: none;
+    background: #26282C;
+    width: 10px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical {
+    background: #5354a6;
+    min-height: 24px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #7F1DFF;
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* === Layouts === */
+QVBoxLayout, QHBoxLayout {
+    spacing: 14px;
+}
+
+/* === Botones laterales === */
+#boton_agregar, #boton_buscar, #boton_actualizar, #boton_eliminar, #boton_consultar {
+    background: linear-gradient(90deg,#353859 0%,#6D70F3 100%);
+    border: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 2px 0;
+}
+
+#boton_agregar:hover,
+#boton_buscar:hover,
+#boton_actualizar:hover,
+#boton_eliminar:hover,
+#boton_consultar:hover {
+    background: #7F1DFF;
+    color: #FFFFFF;
+    border: none;
+}
+
+#boton_agregar:pressed,
+#boton_buscar:pressed,
+#boton_actualizar:pressed,
+#boton_eliminar:pressed,
+#boton_consultar:pressed {
+    background: #561bac;
+    color: #FFFFFF;
+}
+
+/* === Tooltips === */
+QToolTip {
+    background: #1a1c23;
+    color: #FFFFFF;
+    border: 1.5px solid #7F1DFF;
+    padding: 7px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+}
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame_superior">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="boton_menu">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Menú</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagenes/boton_menu.png</normaloff>../imagenes/boton_menu.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>64</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Modelos Básicos</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>64</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="boton_cerrar">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagenes/boton_cerrar.png</normaloff>../imagenes/boton_cerrar.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_central">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="frame_lateral">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>0</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="text">
+            <string>Prompt</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string>Memoria</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="text">
+            <string>Chat</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>246</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_paginas">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QStackedWidget" name="stackedWidget">
+           <property name="currentIndex">
+            <number>2</number>
+           </property>
+           <widget class="QWidget" name="page_prompt">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Escriba el Prompt</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="input_prompt"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="boton_enviar">
+               <property name="text">
+                <string>Enviar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="output_response"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_memoria">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Escriba el Prompt para historial</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="input_prompt_2"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="boton_enviar_2">
+               <property name="text">
+                <string>Enviar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="output_response_2"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_chat">
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>Escriba el Prompt para Chat</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="input_prompt_3"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="boton_enviar_3">
+               <property name="text">
+                <string>Enviar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="output_response_3"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

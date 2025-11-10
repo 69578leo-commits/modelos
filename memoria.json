@@ -1,0 +1,44 @@
+{
+  "history": [
+    {
+      "type": "human",
+      "content": "Hola, soy Joseph."
+    },
+    {
+      "type": "ai",
+      "content": "¡Hola Joseph! Es un placer conocerte. ¿Hay algo en lo que pueda ayudarte hoy?"
+    },
+    {
+      "type": "human",
+      "content": "¿Recuerdas cómo me llamo?"
+    },
+    {
+      "type": "ai",
+      "content": "Sí, Joseph. Recuerdo que tu nombre es Joseph."
+    },
+    {
+      "type": "human",
+      "content": "¿Qué hablamos antes?"
+    },
+    {
+      "type": "ai",
+      "content": "Hablamos sobre tu nombre. Primero te presentaste como Joseph, y luego me preguntaste si recordaba cómo te llamabas, a lo que respondí que sí, que tu nombre es Joseph."
+    },
+    {
+      "type": "human",
+      "content": "¿Recuerdas cómo me llamo?"
+    },
+    {
+      "type": "ai",
+      "content": "Sí, Joseph. Recuerdo que te llamas Joseph."
+    },
+    {
+      "type": "human",
+      "content": "¿Qué hablamos antes?"
+    },
+    {
+      "type": "ai",
+      "content": "Hablamos sobre tu nombre. Primero te presentaste como Joseph, luego me preguntaste si recordaba tu nombre y te confirmé que sí. Después me preguntaste qué habíamos hablado antes, y te resumí la conversación. Y justo ahora, me volviste a preguntar si recordaba tu nombre, y te lo confirmé de nuevo."
+    }
+  ]
+}
